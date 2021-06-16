@@ -34,6 +34,18 @@ for info in string:
     #안의 내용만
     number.append(information[0].get_text())
     print(number)
+    name.append(information[3].get_text())
+    print(name)
+    position.append(information[4].get_text())
+    print(position)
+    age.append(information[5].get_text())
+    print(age)
+    nation.append(information[6].img['alt'])
+    print(nation)
+    team.append(information[7].img['alt'])
+    print(team)
+    value.append(information[8].span['title'])
+    print(value)
 
 else:
     print(response.status_code)
