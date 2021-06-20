@@ -22,5 +22,12 @@ for info in string:
     value=information[8].span['title']
     player.append([number,name,position,age,nation,team,value])
 df=pd.DataFrame(player,columns=['number','name','position','age','nation','team','value'])
-print(df)
+#print(df)
+#print(pd.read_csv('./transfermarket1~25.csv'))
+(row,colum)=df.shape
+print(row,colum)
+print(df.info())
+print(df.head(1),df.tail(1))
+print(df[0:3])
+#print(pd.read_csv('https://github.com/Leesungsup/crawler/blob/main/transfermarket1~25.csv',error_bad_lines=False))
 #df.to_csv("transfermarket1~25.csv",index=False)
