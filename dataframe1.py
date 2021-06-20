@@ -16,10 +16,12 @@ for info in string:
     number=information[0].get_text()
     name=information[3].get_text()
     position=information[4].get_text()
-    age=information[5].get_text()
+    #age=information[5].get_text()#문자
+    age=int(information[5].get_text())#숫자로 변환
     nation=information[6].img['alt']
     team=information[7].img['alt']
-    value=information[8].span['title']
+    #value=information[8].span['title']
+    value=information[8].get_text()
     player.append([number,name,position,age,nation,team,value])
 df=pd.DataFrame(player,columns=['number','name','position','age','nation','team','value'])
 #print(df)
@@ -29,5 +31,15 @@ print(row,colum)
 print(df.info())
 print(df.head(1),df.tail(1))
 print(df[0:3])
+print(df['name'].head())
+print(df[['name','value']].tail())
+print(df.loc[0:2])
+print(df.loc[0,'name'])
+print(df.loc[0:4],['name','team','value'])
+k=[]
+k=df[df['age']<=20]
+print(k)
+print(df[df['team']=='Tottenham Hotspur'])
+print(df.loc[df['age']>=30,['name','value']])
 #print(pd.read_csv('https://github.com/Leesungsup/crawler/blob/main/transfermarket1~25.csv',error_bad_lines=False))
 #df.to_csv("transfermarket1~25.csv",index=False)
